@@ -53,39 +53,54 @@ The dataset contains 20,765 entries and 22 features, including:
 - **Bar Charts**: Displaying room types and neighborhood group distributions.  
 
 ## Key Findings and Insights
-- **Price Trends**:  
-  - Manhattan has the most expensive listings, followed by Brooklyn.  
-  - Entire homes/apartments cost significantly more than private or shared rooms.  
-- **Room Type Distribution**:  
-  - Entire homes/apartments are the most common, but private rooms offer budget-friendly options.  
-- **Outliers in Price**:  
-  - Few listings priced at $10,000+ were detected, indicating the need to filter such extreme values.  
-- **Availability Patterns**:  
-  - Listings with high availability tend to have lower prices and more reviews, likely due to better guest experience.  
-- **Host Behavior**:  
-  - Some hosts manage multiple listings, indicating a trend toward professional hosting.  
+
+**Price Trends**  
+- Manhattan has the most expensive listings, followed by Brooklyn.  
+- Entire homes/apartments cost significantly more than private or shared rooms.  
+
+**Room Type Distribution**  
+- Entire homes/apartments are the most common.  
+- Private rooms offer budget-friendly options.  
+
+**Outliers in Price**  
+- Few listings priced at $10,000+ were detected, highlighting the need to filter extreme values.  
+
+**Availability Patterns**  
+- Listings with high availability tend to have lower prices and more reviews, indicating better guest experiences.  
+
+**Host Behavior**  
+- Some hosts manage multiple listings, suggesting a trend toward professional hosting.
 
 ## How to Run This Project
-Clone the repository:  
-```bash
+
+### Clone the Repository
+```bash```
 git clone https://github.com/Nikita-Dongre/Python_Airbnb_Project.git
-- Install the required libraries:
- - pip install pandas numpy matplotlib seaborn
-- Run the Jupyter notebook or Python script:
- - jupyter notebook Jupyter_notebook.ipynb
+
+### Install the Required Libraries
+`bash`
+pip install pandas numpy matplotlib seaborn
+
+### Run the Jupyter Notebook:
+`bash`
+jupyter notebook Jupyter_notebook.ipynb
 
 ## Recommendations
 
-### For Guests
-- Look for listings with high availability and good reviews for a better experience.  
-- Private rooms in Brooklyn offer affordable stays compared to Manhattan.  
+**For Guests:**  
+- Consider private rooms or shared spaces for budget-friendly options.  
+- Check availability and reviews to find well-rated and consistently available listings.  
 
-### For Hosts
-- Improve availability and review response rates to attract more bookings.  
-- Manage pricing effectively to compete within the borough's market.  
+**For Hosts:**  
+- Price competitively based on neighborhood and room type.  
+- Maintain high availability and encourage guest reviews to improve listing visibility.  
+- Managing multiple listings may indicate a professional approach to hosting.
 
 ## Future Work
-- Use machine learning to predict prices based on room type and location.  
-- Perform sentiment analysis on reviews to bette
+- Use **machine learning** to predict prices based on room type and location.  
+- Perform **sentiment analysis** on reviews to better understand guest experiences.  
+- Create an **interactive dashboard** using Plotly or Tableau for live monitoring.
 
+## Conclusion
+This project offers valuable insights into the New York Airbnb market, helping both guests and hosts make informed decisions. By using EDA techniques, we identified key trends and developed actionable recommendations. Future improvements can involve advanced analytics and predictive modeling to further enhance the findings.
 
