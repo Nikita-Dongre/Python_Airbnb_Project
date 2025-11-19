@@ -74,15 +74,15 @@ The dataset contains 20,765 entries and 22 features, including:
 ## How to Run This Project
 
 ### Clone the Repository
-```bash```
+``
 git clone https://github.com/Nikita-Dongre/Python_Airbnb_Project.git
 
 ### Install the Required Libraries
-`bash`
+``
 pip install pandas numpy matplotlib seaborn
 
 ### Run the Jupyter Notebook:
-`bash`
+``
 jupyter notebook Jupyter_notebook.ipynb
 
 ## Recommendations
