@@ -1,106 +1,206 @@
 # Airbnb Listings EDA Project: New York 2024
 
-## Project Overview
-This project performs Exploratory Data Analysis (EDA) on New York Airbnb data to uncover trends and patterns in rental listings. We use libraries like Pandas, NumPy, Matplotlib, and Seaborn for cleaning, visualization, and analysis.
+---
 
-## Objective
-The goal of this project is to:
-- Analyze room types, prices, and availability across different neighborhoods.
-- Understand host behavior and listing patterns.
-- Detect potential outliers in prices.
-- Provide recommendations for guests and hosts based on insights.
+## :movie_camera: Project Overview
 
-## Dataset
-The dataset contains 20,765 entries and 22 features, including:
-- **id**: Unique identifier for each listing  
-- **name**: Title of the Airbnb listing  
-- **host_name**: Name of the host  
-- **neighborhood_group**: Group (borough) where the listing is located  
-- **latitude / longitude**: Geolocation of listings  
-- **price**: Nightly rental price  
-- **room_type**: Type of accommodation (e.g., entire home, private room)  
-- **reviews_per_month**: Average monthly reviews for the listing  
-- **availability_365**: Number of available days in the year  
+Ever wondered why some Airbnb listings cost 10x more than others in the same city? This project dives deep into **20,765 real Airbnb listings** from New York City (2024) to uncover the factors that drive pricing, availability, and guest satisfaction.
 
-## Steps and Workflow
+Using **Pandas, NumPy, Matplotlib, and Seaborn**, the analysis covers data cleaning, feature engineering, univariate & bivariate analysis, outlier detection, and actionable recommendations for both guests and hosts.
 
-### 1. Data Cleaning
-- Handle missing data: price, neighborhood, and beds columns had null values.  
-- Fix data types: Converted `last_review` to a datetime object.  
-- Remove outliers: Listings with prices > $1,000 were capped to avoid skewed visualizations.  
+---
 
-### 2. EDA (Exploratory Data Analysis)
-- **Room type distribution**:  
-  - Visualized the count of each room type using bar plots.  
-  - Identified Entire home/apt as the most common room type.  
-- **Neighborhood group insights**:  
-  - Analyzed price variations by boroughs.  
-  - Manhattan had the highest average prices.  
-- **Availability trends**:  
-  - Used heatmaps to show correlations among price, `availability_365`, `number_of_reviews`, and beds.  
-- **Price distribution**:  
-  - Used histograms to show the distribution of prices.  
-  - Majority of the listings were priced between $50 - $300.  
-- **Host listings**:  
-  - Analyzed hosts with multiple listings using boxplots to identify key contributors.  
-- **Review behavior**:  
-  - Used pair plots to show relationships between number of reviews, price, and availability.  
+## :bar_chart: Executive Dashboard
 
-### 3. Data Visualization
-- **Pairplot**: To see correlations among price, availability, and number of reviews.  
-- **Heatmap**: Showing correlations among numerical features.  
-- **Histograms and Boxplots**: To detect outliers in price.  
-- **Bar Charts**: Displaying room types and neighborhood group distributions.  
 
-## Key Findings and Insights
+  Airbnb Dashboard
 
-**Price Trends**  
-- Manhattan has the most expensive listings, followed by Brooklyn.  
-- Entire homes/apartments cost significantly more than private or shared rooms.  
 
-**Room Type Distribution**  
-- Entire homes/apartments are the most common.  
-- Private rooms offer budget-friendly options.  
 
-**Outliers in Price**  
-- Few listings priced at $10,000+ were detected, highlighting the need to filter extreme values.  
+---
 
-**Availability Patterns**  
-- Listings with high availability tend to have lower prices and more reviews, indicating better guest experiences.  
+## :open_file_folder: Dataset at a Glance
 
-**Host Behavior**  
-- Some hosts manage multiple listings, suggesting a trend toward professional hosting.
+| :pushpin: Detail | :chart_with_upwards_trend: Value |
+|---|---|
+| **Total Listings** | 20,765 |
+| **Boroughs Covered** | 5 (Manhattan, Brooklyn, Queens, Bronx, Staten Island) |
+| **Features** | 22 columns |
+| **Avg Nightly Price** | $187.71 |
+| **Price Range** | $10 -- $100,000 |
+| **Median Price** | $125 |
+| **Most Expensive Borough** | Manhattan ($204/night) |
+| **Most Common Room Type** | Entire home/apt |
 
-## How to Run This Project
+### :page_facing_up: Key Columns
 
-### Clone the Repository
-``
+| :label: Category | :pencil: Fields |
+|---|---|
+| Listing Info | ID, Name, Neighbourhood, Borough, Latitude, Longitude |
+| Host Info | Host ID, Host Name, Calculated Host Listings Count |
+| Room Details | Room Type, Bedrooms, Beds, Baths |
+| Pricing | Price, Price per Bed (engineered) |
+| Reviews | Number of Reviews, Reviews per Month, Last Review, Rating |
+| Availability | Availability (365 days), Minimum Nights |
+
+---
+
+## :fire: Key Findings
+
+:small_orange_diamond: **Manhattan** is the most expensive borough at **$204/night** avg, followed by Brooklyn ($155) and Queens ($122)
+
+:small_orange_diamond: **Entire home/apt** is the most common room type (~53%), followed by Private rooms (~41%)
+
+:small_orange_diamond: **Price per bed** reveals the true cost -- Manhattan at **$139/bed** vs Staten Island at just **$68/bed**
+
+:small_orange_diamond: Majority of listings are priced between **$50 - $300**, with extreme outliers up to $100,000
+
+:small_orange_diamond: Listings with **higher availability** tend to have **lower prices and more reviews** -- indicating better guest experiences
+
+:small_orange_diamond: Some hosts manage **multiple listings**, suggesting a growing trend toward **professional hosting**
+
+:small_orange_diamond: **Weak correlation** between price and number of reviews -- expensive doesn't always mean popular
+
+---
+
+## :gear: Analysis Workflow
+
+```
+Step 1: Import Dependencies (Pandas, NumPy, Matplotlib, Seaborn)
+         |
+Step 2: Load Dataset (20,765 listings, 22 features)
+         |
+Step 3: Initial Exploration (shape, info, describe, nulls)
+         |
+Step 4: Data Cleaning (handle nulls, fix dtypes, remove outliers)
+         |
+Step 5: Univariate Analysis (price distribution, room types, boroughs)
+         |
+Step 6: Feature Engineering (Price per Bed)
+         |
+Step 7: Bivariate Analysis (price vs borough, reviews vs price, geo plots)
+         |
+Step 8: Correlation Analysis (heatmap, pairplot)
+         |
+Step 9: Insights & Recommendations
+```
+
+---
+
+## :art: Visualizations Created
+
+| :chart_with_upwards_trend: Chart | :bulb: Insight |
+|---|---|
+| **Bar Plot** -- Price by Borough x Room Type | Manhattan entire homes are the priciest segment |
+| **Scatter Plot** -- Reviews vs Price by Borough | High-priced listings don't always get more reviews |
+| **Pair Plot** -- Price, Nights, Reviews, Availability | Availability and reviews show inverse relationship with price |
+| **Heatmap** -- Correlation Matrix | Beds and price have moderate positive correlation |
+| **Geo Scatter** -- Lat/Long by Room Type | Manhattan is densely packed with entire home listings |
+| **Histogram** -- Price Distribution | Right-skewed; most listings under $300 |
+| **Box Plot** -- Host Listings Count | Identifies professional hosts with 10+ listings |
+
+---
+
+## :hammer_and_wrench: Tech Stack
+
+| Layer | Tool |
+|---|---|
+| Language | Python 3.8+ |
+| Data Processing | Pandas, NumPy |
+| Visualization | Matplotlib, Seaborn |
+| Environment | Jupyter Notebook |
+| Dataset | Inside Airbnb (New York 2024) |
+
+---
+
+## :file_folder: Project Structure
+
+| File | Description |
+|---|---|
+| `Jupyter_notebook.ipynb` | Complete EDA notebook with all analysis and visualizations |
+| `Airbnb_NewYork_dashboard.png` | Executive dashboard summarizing key metrics |
+| `README.md` | Project documentation |
+
+---
+
+## :rocket: How to Run
+
+1. **Clone the repository**
+```bash
 git clone https://github.com/Nikita-Dongre/Python_Airbnb_Project.git
+```
 
-### Install the Required Libraries
-``
+2. **Install dependencies**
+```bash
 pip install pandas numpy matplotlib seaborn
+```
 
-### Run the Jupyter Notebook:
-``
+3. **Launch the notebook**
+```bash
 jupyter notebook Jupyter_notebook.ipynb
+```
 
-## Recommendations
+---
 
-**For Guests:**  
-- Consider private rooms or shared spaces for budget-friendly options.  
-- Check availability and reviews to find well-rated and consistently available listings.  
+## :chart_with_upwards_trend: Average Price by Borough
 
-**For Hosts:**  
-- Price competitively based on neighborhood and room type.  
-- Maintain high availability and encourage guest reviews to improve listing visibility.  
-- Managing multiple listings may indicate a professional approach to hosting.
+| Borough | Avg Price/Night | Avg Price/Bed |
+|---|---|---|
+| Manhattan | $204 | $139 |
+| Brooklyn | $155 | $100 |
+| Queens | $122 | $76 |
+| Staten Island | $119 | $68 |
+| Bronx | $108 | $75 |
 
-## Future Work
-- Use **machine learning** to predict prices based on room type and location.  
-- Perform **sentiment analysis** on reviews to better understand guest experiences.  
-- Create an **interactive dashboard** using Plotly or Tableau for live monitoring.
+---
 
-## Conclusion
-This project offers valuable insights into the New York Airbnb market, helping both guests and hosts make informed decisions. By using EDA techniques, we identified key trends and developed actionable recommendations. Future improvements can involve advanced analytics and predictive modeling to further enhance the findings.
+## :bulb: Recommendations
+
+### For Guests :suitcase:
+- **Budget travelers**: Look for private rooms in Queens or Bronx -- best value under $80/night
+- **Families**: Brooklyn offers spacious entire homes at lower rates than Manhattan
+- **Check reviews**: Listings with high availability + many reviews = consistent quality
+- **Avoid outliers**: Filter out listings above $1,000 to find realistic options
+
+### For Hosts :house_with_garden:
+- **Price competitively** based on borough and room type benchmarks above
+- **Maximize availability** -- higher availability correlates with more bookings and reviews
+- **Encourage reviews** -- they directly improve listing visibility
+- **Multi-listing strategy**: Consider managing multiple properties for higher total revenue
+
+---
+
+## :crystal_ball: Future Work
+
+- :robot: **Machine Learning** -- Predict prices using room type, location, and amenities
+- :speech_balloon: **Sentiment Analysis** -- Analyze review text to understand guest satisfaction drivers
+- :world_map: **Interactive Dashboard** -- Build a Plotly/Tableau dashboard for live exploration
+- :calendar: **Time Series** -- Track seasonal pricing trends across months
+
+---
+
+## :dart: Conclusion
+
+This project reveals that **location and room type are the strongest price drivers** in the NYC Airbnb market. Manhattan dominates in pricing, but Brooklyn offers the best balance of quality and affordability. The analysis provides actionable insights for both guests seeking value and hosts optimizing revenue -- all through the power of Python EDA.
+
+---
+
+## :handshake: Author
+
+
+  Nikita Dongre
+
+  Data Enthusiast | Python Analytics | Aspiring Data Analyst
+
+
+
+
+  :star: If you found this project insightful, give it a star!
+
+
+
+---
+
+
+  Made with :heart: and Python
 
