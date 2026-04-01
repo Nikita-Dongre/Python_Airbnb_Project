@@ -1,4 +1,15 @@
-# Airbnb Listings EDA Project: New York 2024
+<h1 align="center">:house: Airbnb New York 2024 — Exploratory Data Analysis :bar_chart:</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Listings-20%2C765-orange?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Boroughs-5-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge"/>
+</p>
+
+<p align="center">
+  <b>A comprehensive Exploratory Data Analysis of 20,765 Airbnb listings across New York City's 5 boroughs -- uncovering pricing trends, room type patterns, and host behavior using Python.</b>
+</p>
 
 ---
 
@@ -12,10 +23,9 @@ Using **Pandas, NumPy, Matplotlib, and Seaborn**, the analysis covers data clean
 
 ## :bar_chart: Executive Dashboard
 
-
-  Airbnb Dashboard
-
-
+<p align="center">
+  <img src="Airbnb_NewYork_Dashboard.png" alt="Airbnb Dashboard" width="100%"/>
+</p>
 
 ---
 
